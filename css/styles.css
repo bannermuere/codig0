@@ -1,19 +1,21 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
     transition: all 300ms;
     font-family: 'Montserrat';
 }
 
 ::-webkit-scrollbar{
-    width: 10px;   
+    width: 0px;   
     background-color: #000000;
 }
 
 ::-webkit-scrollbar-thumb{
     background-color: #535353;
 }
+
 
 /* Header */
 
@@ -110,6 +112,14 @@ header:hover > .down{
     transform: translateY(0px);
 }
 
+/* body */
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type:y mandatory;
+    overflow-y: auto;
+}
 
 /* Inicio */
 
@@ -120,6 +130,10 @@ header:hover > .down{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
+    background: rgb(167,226,207);
+    background: linear-gradient(0deg, rgba(167,226,207,0.20211834733893552) 0%, rgba(255,255,255,0) 100%);
+
 }
 
 .inicio div{
@@ -138,26 +152,31 @@ header:hover > .down{
 
 .contenedorServicios{
     width: 100%;
-    margin-bottom: 100px;
+    height: calc(100vh - 80px);
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    background: rgb(220,186,237);
+    background: linear-gradient(0deg, rgba(220,186,237,0.5046393557422969) 0%, rgba(167,226,207,0.20211834733893552) 100%);
 }
 
-.contenedorServicios h1{
+.contenedorServicios div h3{
     font-size: 3rem;
-    margin: 40px;
+    margin-bottom: 30px;
 }
 
 .servicios{
     width: 70%;
-    margin: auto;
+    height: fit-content;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.servicios section{
+.servicio{
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -170,28 +189,27 @@ header:hover > .down{
     transform: perspective(1000px); 
 }
 
-.servicios section img{
+.servicio img{
     width: 70%;
     height: 200px;
     object-fit: cover;
-    border-radius: 5px;
     transform: translateZ(60px);   
 }
 
-.servicios section h2{
+.servicio h2{
     padding: 15px 0px 0px 10px;
     color: #ffffff;
     transform: translateZ(60px);   
 }
 
-.servicios section p{
+.servicio p{
     max-width: 80%;
     text-align: center;
     color: #ffffff;
     transform: translateZ(60px);   
 }
 
-.servicios section button{
+.servicio button{
     margin-top: 15px;
     outline: none;
     padding: 10px 40px;
